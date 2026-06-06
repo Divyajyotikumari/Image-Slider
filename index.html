@@ -1,50 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css">
-    <title>Image Slider</title>
-  </head>
-  <body>
-    <div id="slideContainer">
-      <button id='prev' class="sliderBtn">&lt;
-          <button id="next" class="sliderBtn">&gt;</button>
-      </button>
-      <div class="slide show">
-        <img src="image1.jpeg" alt="image1" />
-        <p>Slide No. 1</p>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Image Slider</title>
+</head>
+
+<body>
+  <main>
+    <div class="slider-wrapper">
+      <h1 class="slider-title">Gallery Showcase</h1>
+      <div id="slideContainer">
+        <button id='prev' class="sliderBtn prev-btn" aria-label="Previous slide">&#10094;</button>
+        <button id="next" class="sliderBtn next-btn" aria-label="Next slide">&#10095;</button>
+        <div class="slide show">
+          <img src="image1.jpeg" alt="image1" />
+          <p>Slide No. 1</p>
+        </div>
+        <div class="slide">
+          <img src="image2.jpg" alt="image2" />
+          <p>Slide No. 2</p>
+        </div>
+        <div class="slide">
+          <img src="image3.jpeg" alt="image3" />
+          <p>Slide No. 3</p>
+        </div>
+        <div class="slide">
+          <img src="image4.jpeg" alt="image4" />
+          <p>Slide No. 4</p>
+        </div>
+        <div class="slide">
+          <img src="image5.jpeg" alt="image5" />
+          <p>Slide No. 5</p>
+        </div>
+        <div class="slide">
+          <img src="image6.jpeg" alt="image6" />
+          <p>Slide No. 6</p>
+        </div>
+        <div class="slide">
+          <img src="image7.jpeg" alt="image7" />
+          <p>Slide No. 7</p>
+        </div>
+        <div class="slide">
+          <img src="image8.jpeg" alt="image8" />
+          <p>Slide No. 8</p>
+        </div>
       </div>
-      <div class="slide">
-        <img src="image2.jpg" alt="image2" />
-        <p>Slide No. 2</p>
-      </div>
-      <div class="slide">
-        <img src="image3.jpeg" alt="image3" />
-        <p>Slide No. 3</p>
-      </div>
-      <div class="slide">
-        <img src="image4.jpeg" alt="image4" />
-        <p>Slide No. 4</p>
-      </div>
-      <div class="slide">
-        <img src="image5.jpeg" alt="image5" />
-        <p>Slide No. 5</p>
-      </div>
-      <div class="slide">
-        <img src="image6.jpeg" alt="image6" />
-        <p>Slide No. 6</p>
-      </div>
-      <div class="slide">
-        <img src="image7.jpeg" alt="image7" />
-        <p>Slide No. 7</p>
-      </div>
-      <div class="slide">
-        <img src="image8.jpeg" alt="image8" />
-        <p>Slide No. 8</p>
+
+      <div class="indicators">
+        <span class="dot" data-slide="0"></span>
+        <span class="dot" data-slide="1"></span>
+        <span class="dot" data-slide="2"></span>
+        <span class="dot" data-slide="3"></span>
+        <span class="dot" data-slide="4"></span>
+        <span class="dot" data-slide="5"></span>
+        <span class="dot" data-slide="6"></span>
+        <span class="dot" data-slide="7"></span>
       </div>
     </div>
-    <script src='script.js'></script>
-  </body>
+  </main>
+  <script src='script.js'></script>
+</body>
+
 </html>

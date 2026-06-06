@@ -1,46 +1,44 @@
 let nextBtn = document.querySelector("#next");
 let prevBtn = document.querySelector("#prev");
 let slides = document.querySelectorAll(".slide");
-let changeSlide = 0;
-// console.log(changeSlide);
-nextBtn.addEventListener("click", function() {
-  
-    slides.forEach(function (slide, index) {
-    if (slide.classList.contains("show") === true) {
-      changeSlide = index + 1;
-      slide.classList.remove("show");
-    }
-    
-  });
-//   console.log(changeSlide);
-  if (changeSlide < slides.length) {
-    slides[changeSlide].classList.add("show");
-    }
-  else {
-      changeSlide = 0;
-      slides[changeSlide].classList.add("show");
-    }
-});
-// console.log(changeSlide);
-prevBtn.addEventListener('click', function () {
-   
-    slides.forEach(function (slide, index) {
-        if (slide.classList.contains("show") === true) {
-            changeSlide = index - 1;
-            slide.classList.remove("show");
-        }
-       
-        
-    });
-    // console.log(changeSlide);
+let dots = document.querySelectorAll(".dot");
+let currentSlide = 0;
 
-    if (changeSlide < slides.length && changeSlide > -1) {
-        slides[changeSlide].classList.add("show");
-    }
-    else {
-        // console.log(slides.length);
-        
-        changeSlide = slides.length - 1;
-        slides[changeSlide].classList.add("show");
-    }
+function showSlide(index) {
+    // Hide all slides
+    slides.forEach(function (slide) {
+        slide.classList.remove("show");
+    });
+
+    // Remove active class from all dots
+    dots.forEach(function (dot) {
+        dot.classList.remove("active");
+    });
+
+    // Show the current slide
+    slides[index].classList.add("show");
+
+    // Highlight the corresponding dot
+    dots[index].classList.add("active");
+}
+
+// Initialize first slide and dot
+showSlide(currentSlide);
+
+nextBtn.addEventListener("click", function () {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+});
+
+prevBtn.addEventListener('click', function () {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+});
+
+// Add click functionality to indicator dots
+dots.forEach(function (dot) {
+    dot.addEventListener('click', function () {
+        currentSlide = parseInt(this.getAttribute('data-slide'));
+        showSlide(currentSlide);
+    });
 });
